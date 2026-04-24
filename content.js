@@ -294,5 +294,25 @@ chrome.storage.onChanged.addListener((changes, area) => {
   }
 });
 
+// --- Un-hide everything when navigating to a watch page ---
+// YouTube is a SPA so hidden homepage cards can persist into the watch page.
+let lastPath = window.location.pathname;
+const navObserver = new MutationObserver(() => {
+  const currentPath = window.location.pathname;
+  if (currentPath !== lastPath) {
+    lastPath = currentPath;
+    if (currentPath === '/watch') {
+      // Navigated to a video — restore all hidden elements
+      document.querySelectorAll('[style*="display: none"]').forEach(el => {
+        el.style.display = '';
+      });
+      document.querySelectorAll('[optimism-checked]').forEach(el => {
+        el.removeAttribute('optimism-checked');
+      });
+    }
+  }
+});
+navObserver.observe(document.body, { childList: true, subtree: true });
+
 // --- Start ---
 loadRemoteKeywords().then(() => loadSettings(filterCards));
