@@ -13,7 +13,7 @@ const OPTIMISM_CONFIG = {
 
   // URL of your keywords.json file on GitHub (raw content URL)
   // e.g. 'https://raw.githubusercontent.com/YOUR_USERNAME/youtube-filter/main/keywords.json'
-  REMOTE_KEYWORDS_URL: 'https://raw.githubusercontent.com/iChanitz08/youtube-filter/main/keywords.json',
+  REMOTE_KEYWORDS_URL: 'https://raw.githubusercontent.com/getoptimism/youtube-filter/main/keywords.json',
 
   // How often to refresh remote keywords (in hours)
   KEYWORD_REFRESH_HOURS: 24,
