@@ -1,0 +1,13 @@
+{
+  "name": "youtube-filter",
+  "version": "1.0.0",
+  "description": "Chrome extension to filter YouTube content by keyword, channel, and duration.",
+  "scripts": {
+    "test": "npx playwright test tests/",
+    "test:monitor": "npx playwright test tests/youtube.test.js",
+    "zip": "zip -r youtube-filter.zip . --exclude '*.git*' --exclude 'node_modules/*' --exclude 'tests/*' --exclude '.github/*' --exclude 'package*.json'"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}

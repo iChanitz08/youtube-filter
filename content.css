@@ -1,0 +1,6 @@
+/* Styles injected into YouTube pages by the extension */
+
+/* Hidden cards should truly disappear without leaving blank gaps */
+[data-yf-processed][style*="display: none"] {
+  display: none !important;
+}

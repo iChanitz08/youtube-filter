@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Optimism",
+  "version": "1.1.0",
+  "description": "Keep YouTube positive. Automatically filters out negative news, violence, clickbait, and distressing content so your feed feels good.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://*.supabase.co/*",
+    "https://raw.githubusercontent.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["config.js", "content.js", "reporter.js"],
+      "css": ["content.css", "reporter.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

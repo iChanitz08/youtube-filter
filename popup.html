@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optimism</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <span class="sun">☀</span>
+      <span class="brand-name">Optimism</span>
+    </div>
+    <label class="toggle-switch" title="Enable / disable filtering">
+      <input type="checkbox" id="enabledToggle" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <span id="hiddenCount">0</span> negative videos filtered today
+  </div>
+
+  <!-- Category toggles -->
+  <div class="section">
+    <div class="section-title">Filter Categories</div>
+    <div class="category-list">
+      <label class="category-row">
+        <div class="category-info">
+          <span class="category-icon">📰</span>
+          <div>
+            <div class="category-name">News &amp; Media</div>
+            <div class="category-desc">Breaking news, major outlets</div>
+          </div>
+        </div>
+        <label class="toggle-switch small">
+          <input type="checkbox" class="category-toggle" data-category="news" checked />
+          <span class="slider"></span>
+        </label>
+      </label>
+
+      <label class="category-row">
+        <div class="category-info">
+          <span class="category-icon">⚠️</span>
+          <div>
+            <div class="category-name">Violence &amp; Crime</div>
+            <div class="category-desc">Shootings, attacks, death</div>
+          </div>
+        </div>
+        <label class="toggle-switch small">
+          <input type="checkbox" class="category-toggle" data-category="violence" checked />
+          <span class="slider"></span>
+        </label>
+      </label>
+
+      <label class="category-row">
+        <div class="category-info">
+          <span class="category-icon">🏛️</span>
+          <div>
+            <div class="category-name">Politics</div>
+            <div class="category-desc">Elections, politicians, scandal</div>
+          </div>
+        </div>
+        <label class="toggle-switch small">
+          <input type="checkbox" class="category-toggle" data-category="politics" checked />
+          <span class="slider"></span>
+        </label>
+      </label>
+
+      <label class="category-row">
+        <div class="category-info">
+          <span class="category-icon">🌪️</span>
+          <div>
+            <div class="category-name">Disasters &amp; Crises</div>
+            <div class="category-desc">Natural disasters, emergencies</div>
+          </div>
+        </div>
+        <label class="toggle-switch small">
+          <input type="checkbox" class="category-toggle" data-category="disaster" checked />
+          <span class="slider"></span>
+        </label>
+      </label>
+
+      <label class="category-row">
+        <div class="category-info">
+          <span class="category-icon">🎣</span>
+          <div>
+            <div class="category-name">Rage &amp; Clickbait</div>
+            <div class="category-desc">"You won't believe…", shocking</div>
+          </div>
+        </div>
+        <label class="toggle-switch small">
+          <input type="checkbox" class="category-toggle" data-category="clickbait" checked />
+          <span class="slider"></span>
+        </label>
+      </label>
+
+      <label class="category-row">
+        <div class="category-info">
+          <span class="category-icon">💙</span>
+          <div>
+            <div class="category-name">Mental Health Triggers</div>
+            <div class="category-desc">Suicide, self-harm, abuse</div>
+          </div>
+        </div>
+        <label class="toggle-switch small">
+          <input type="checkbox" class="category-toggle" data-category="mentalHealth" checked />
+          <span class="slider"></span>
+        </label>
+      </label>
+
+      <label class="category-row">
+        <div class="category-info">
+          <span class="category-icon">🤖</span>
+          <div>
+            <div class="category-name">AI Doomsday</div>
+            <div class="category-desc">AI takeover, extinction, killer robots</div>
+          </div>
+        </div>
+        <label class="toggle-switch small">
+          <input type="checkbox" class="category-toggle" data-category="aiDoom" checked />
+          <span class="slider"></span>
+        </label>
+      </label>
+    </div>
+  </div>
+
+  <!-- Custom keywords -->
+  <div class="section">
+    <div class="section-title">Custom Keywords</div>
+    <div class="input-row">
+      <input type="text" id="keywordInput" placeholder="Add a word to block…" />
+      <button id="addKeyword">Add</button>
+    </div>
+    <div class="tag-list" id="keywordTags"></div>
+  </div>
+
+  <!-- Blocked channels -->
+  <div class="section">
+    <div class="section-title">Block Channels</div>
+    <div class="input-row">
+      <input type="text" id="channelInput" placeholder="Channel name…" />
+      <button id="addChannel">Add</button>
+    </div>
+    <div class="tag-list" id="channelTags"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <button id="saveBtn" class="save-btn">Save Settings</button>
+    <span id="savedMsg" class="saved-msg"></span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "version": 1,
+    "last_updated": "2026-04-23",
+    "description": "Community-sourced keywords generated from user reports. Auto-updated weekly by the Optimism keyword improvement pipeline."
+  },
+  "news": [],
+  "violence": [],
+  "politics": [],
+  "disaster": [],
+  "clickbait": [],
+  "mentalHealth": [],
+  "aiDoom": []
+}
